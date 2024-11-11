@@ -1,11 +1,10 @@
 ﻿import * as React from 'react';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
 
 export default function MyTextField(props) {
 
-    const { label, placeholder, name, control, width } = props
+    const { label, placeholder, name, control, width, defaultValue } = props
     return (
         <Controller
             name={name}
@@ -22,6 +21,9 @@ export default function MyTextField(props) {
                     label={label}
                     variant='standard'
                     placeholder={placeholder}
+                    onChange={onChange}
+                    value={value}
+                    defaultValue={defaultValue}
                 />
             )}
 

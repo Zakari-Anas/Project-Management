@@ -5,4 +5,19 @@ from .models import *
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ("name", "description", "startDate", "endDate", "comments", "status")
+        fields = (
+            "id",
+            "name",
+            "ProjectManager",
+            "description",
+            "startDate",
+            "endDate",
+            "comments",
+            "status",
+        )
+
+
+class ProjectManagerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProjectManager
+        fields = ("id", "name")

@@ -1,4 +1,4 @@
-﻿import React from 'react'
+﻿import React, { useEffect } from 'react'
 import { Box, Button, Typography } from '@mui/material'
 import MyDatePicker from './Forms/DatePicker'
 import MyTextField from './Forms/TextFields'
@@ -8,12 +8,17 @@ import { useForm } from 'react-hook-form'
 import axiosInstance from './Axios'
 import dayjs from 'dayjs'
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import axios from 'axios'
+import { useState } from 'react'
+import { useParams } from 'react-router-dom'
+import Dayjs from 'dayjs';
 import AxiosInstance from './Axios'
-
-function Create() {
+import { set } from 'mongoose'
+function Edit() {
 
     const navigate = useNavigate()
+
+    const [project, setProject] = useState({})
     const [ProjectManager, setProjectManager] = React.useState()
     const [loading, setLoading] = React.useState(true)
 
@@ -24,12 +29,6 @@ function Create() {
         { id: 'Completed', name: 'Completed' },
     ]
 
-    const defaultValues = {
-        name: '',
-        status: '',
-        description: '',
-        Comment: ''
-    }
 
     const GetProjectManagers = () => {
         AxiosInstance.get(`projectManager/`).then((res) => {
@@ -42,38 +41,68 @@ function Create() {
     useEffect(() => {
         GetProjectManagers();
     }, []);
+    const data = useParams()
+
+    const id = data.id
 
 
-    const { handleSubmit, reset, control } = useForm({ defaultValues: defaultValues })
+    const defaultValues = {
+        name: '',
+        status: '',
+        description: '',
+        Comment: ''
+    }
+
+    const { handleSubmit, setValue, reset, control } = useForm({ defaultValues: defaultValues })
+
+    const GetProject = () => {
+        axiosInstance.get(`project/${id}`).then((res) => {
+            setValue('name', res.data.name)
+            setValue('status', res.data.status)
+            setValue('ProjectManager', res.data.ProjectManager)
+            setValue('description', res.data.description)
+            setValue('Comment', res.data.comments)
+            setValue('start_date', dayjs(res.data.startDate))
+            setValue('end_date', dayjs(res.data.endDate))
+            console.log(res.data)
+        })
+
+
+    }
+
+    useEffect(() => {
+
+        GetProject();
+
+
+    }, []);
 
 
     const submition = (data) => {
 
-
-
         const start_date = dayjs(data.start_date.$d).format('YYYY-MM-DD')
         const end_date = dayjs(data.end_date.$d).format('YYYY-MM-DD')
-
-        axiosInstance.post(`project/`, {
+        axiosInstance.put(`project/${id}/`, {
             name: data.name,
-            description: data.description,
             ProjectManager: data.ProjectManager,
+            description: data.description,
             startDate: start_date,
             endDate: end_date,
             comments: data.Comment,
             status: data.status
         }).then((res) => {
-            console.log(res)
-            reset()
             navigate('/')
         }).catch((error) => {
             console.log(error)
         })
 
+
     }
+
+
+
     return (
         <div>
-
             {loading ? <p>Loading data...</p> :
                 <form onSubmit={handleSubmit(submition)}>
                     <Box sx={{ display: 'flex', width: '100%', backgroundColor: '#00003f', marginBottom: "20px" }}>
@@ -108,7 +137,8 @@ function Create() {
 
                         </Box>
                     </Box>
-                </form>}
+                </form>
+            }
 
         </div>
     )
@@ -123,4 +153,4 @@ function Create() {
 // created_at = models.DateTimeField(auto_now_add = True)
 // modified_at = models.DateTimeField(auto_now = True)
 
-export default Create
+export default Edit

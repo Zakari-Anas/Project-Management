@@ -1,5 +1,5 @@
 ﻿import * as React from 'react';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Controller } from 'react-hook-form';
 
@@ -20,9 +20,10 @@ export default function MultilineTextFields(props) {
                     sx={{ width: width }}
                     id="standard-multiline-static"
                     label={label}
+                    onChange={onChange}
+                    value={value}
                     multiline
-                    rows={4}
-                    defaultValue="Default Value"
+                    rows={1}
                     variant="standard"
                     placeholder={placeholder}
                 />

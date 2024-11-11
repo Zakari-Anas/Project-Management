@@ -7,17 +7,17 @@ import Select from '@mui/material/Select';
 import { Controller } from 'react-hook-form';
 
 export default function SelectForm(props) {
-  const [age, setAge] = React.useState('');
+  // const [age, setAge] = React.useState('');
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
 
-  const { label, name, control, width } = props
+  const { label, name, control, width, options } = props
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
+      <FormControl fullWidth variant='standard'>
         <InputLabel id="demo-simple-select-label">{label}</InputLabel>
         <Controller
           name={name}
@@ -32,13 +32,19 @@ export default function SelectForm(props) {
               sx={{ width: width }}
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={age}
               label="Age"
-              onChange={handleChange}
+              onChange={onChange}
+              value={value}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+
+              {
+                options.map((option) => (
+
+                  <MenuItem key={option.id} value={option.id}>{option.name}</MenuItem>
+
+
+                ))
+              }
             </Select>
           )}
 
