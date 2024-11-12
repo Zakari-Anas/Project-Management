@@ -1,0 +1,20 @@
+Design Choices and User Experience Explanation :
+
+In designing the project management system, my main goal was to create an intuitive, seamless experience for users, focusing on clean navigation, accessible actions, and visual clarity. Each design choice was made with an immersive user experience in mind, ensuring that users can efficiently manage projects with minimal effort.
+
+Key Design Choices for Immersive UX :
+
+Clear Navigation and Layout: I structured the interface to be consistent and easy to navigate, using a sidebar for primary navigation elements like “Home,” “Projects,” and “About” This reduces the learning curve and allows users to focus on tasks without searching for core features.
+
+Actionable Tables with Interactive Elements: I chose to implement a material table that clearly displays project data with options to edit or delete entries directly from the table view. This provides users immediate access to the most critical project actions and reduces the number of screens needed, enhancing the flow of interaction.
+
+Dialog for Sensitive Actions: For actions like deleting a project, I added a confirmation dialog to avoid accidental deletions and enhance user control. This design approach respects the user’s data and adds a layer of security, creating a more thoughtful experience.
+
+UX Challenges and Solutions :
+
+Handling Dynamic Data: One challenge was displaying related data, such as project managers, in a way that was both clear and not cluttered. Instead of displaying only IDs, I added logic to fetch and display the project manager’s name, making the table more informative and readable.
+
+Ensuring Responsiveness: Another challenge was ensuring that the UI remained functional and visually appealing on various screen sizes. I leveraged Material-UI’s responsive components to adapt the layout, ensuring a consistent experience across devices.
+
+
+Each design decision was guided by a focus on an efficient, user-centered experience, prioritizing both usability and technical feasibility to create a cohesive and productive project management tool.
