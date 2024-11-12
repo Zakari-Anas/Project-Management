@@ -1,7 +1,7 @@
 # Project Management Application
 
 ## Project Overview
-This project is a Project Management application with a Django REST framework backend and a React.js frontend. The goal of this application is to help users manage and monitor projects efficiently, featuring CRUD operations for projects and project managers### **Not Implemented Yet**.
+This project is a Project Management application with a Django REST framework backend and a React.js frontend. The goal of this application is to help users manage and monitor projects efficiently, featuring CRUD operations for projects and project managers (**Not Implemented Yet**).
 
 ## Design Choices and User Experience
 The design prioritizes ease of navigation and quick access to core functionality. The table interface, managed with Material React Table, allows users to view, edit, and delete projects directly from the main view. A modal popup was used for confirmation dialogs, providing an intuitive and non-intrusive experience.
