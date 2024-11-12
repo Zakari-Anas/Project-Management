@@ -9,7 +9,7 @@ The design prioritizes ease of navigation and quick access to core functionality
 ### Key UX Considerations:
 - **Clarity and Accessibility**: Ensured easy-to-read and accessible interfaces using Material UI.
 - **Responsiveness**: Designed the application to be responsive, ensuring smooth access on various devices.
-- **Feedback**: Integrated feedback elements like loading spinners and confirmation dialogs to keep users informed.
+- **Feedback**: Integrated feedback elements like confirmation dialogs to keep users informed.
 
 ### Challenges and Solutions:
 - **Data Fetching and State Management**: Managing data flow between React and Django required clear state management. Axios was chosen for its simplicity in handling HTTP requests.
