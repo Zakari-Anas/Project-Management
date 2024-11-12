@@ -49,7 +49,7 @@ The design prioritizes ease of navigation and quick access to core functionality
 2. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
    
 ## Project design on Figma
-You can view the project design on Figma here: [Project Design on Figma](https://www.figma.com/design/zlFcV3nkmq05AuhyFIUJBX/Untitled?node-id=0-1&node-type=canvas&t=7cCiC6yhnMN9rutS-0)
+You can view the project design on Figma here: [Project Design on Figma]([https://www.figma.com/design/zlFcV3nkmq05AuhyFIUJBX/Untitled?node-id=0-1&node-type=canvas&t=7cCiC6yhnMN9rutS-0](https://www.figma.com/proto/JhQtvgtb8kxHVf0GDsmoPU/Untitled?node-id=0-1&t=uGbz2yfliyW2A0YY-1))
 
 
 https://github.com/user-attachments/assets/e41a414d-e8e7-4616-adc8-685688b7f3d4
