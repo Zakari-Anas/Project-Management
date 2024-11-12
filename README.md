@@ -44,10 +44,6 @@ The design prioritizes ease of navigation and quick access to core functionality
     npm start
     ```
 
-## Running the Application
-1. Ensure both backend and frontend servers are running.
-2. Access the application in your browser at [http://localhost:3000](http://localhost:3000).
-   
 ## Project design on Figma
 You can view the project design on Figma here: [Project Design on Figma](https://www.figma.com/proto/JhQtvgtb8kxHVf0GDsmoPU/Untitled?node-id=0-1&t=uGbz2yfliyW2A0YY-1)
 
